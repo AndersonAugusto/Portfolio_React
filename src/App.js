@@ -183,7 +183,7 @@ function App() {
         className="box-project disabled"
       >
         <div key={index} className="box-elements-projects disabled">
-          <img src={project.image} className="disabled" />
+          <img src={project.image} className="disabled" alt="icon" />
           <p>{project.title}</p>
         </div>
       </Link>
@@ -253,15 +253,15 @@ function App() {
         </nav>
         <div className="caixa-foguete">
           <div className="foguete">
-            <img className="carcaca" src={foguete} />
-            {finishedTimeout && <img className="fogo" src={fogo} />}
+            <img className="carcaca" src={foguete} alt="foguete" />
+            {finishedTimeout && <img className="fogo" src={fogo} alt="icon" />}
           </div>
         </div>
         <div className="box-astronauta">
           {!finishedTimeout && (
             <>
               <p className="text-astronauta">Wellcome to my portfolio!</p>
-              <img className="astronauta" src={astronauta} />
+              <img className="astronauta" src={astronauta} alt="icon" />
             </>
           )}
         </div>
@@ -389,7 +389,7 @@ function App() {
               </p>
             </div>
             <div className="alienigena">
-              <img src={alienigena} />
+              <img src={alienigena} alt="icon" />
             </div>
           </div>
         </div>
@@ -420,21 +420,26 @@ function App() {
           <a
             target="_blank"
             href="https://www.linkedin.com/in/andersonferrari96/"
+            rel="noreferrer"
           >
             <div className="box-socialMedia">
-              <img src={linkedin} />
+              <img src={linkedin} alt="icon" />
               <span> LinkedIn </span>
             </div>
           </a>
-          <a target="_blank" href="https://github.com/AndersonAugusto">
+          <a
+            target="_blank"
+            href="https://github.com/AndersonAugusto"
+            rel="noreferrer"
+          >
             <div className="box-socialMedia">
-              <img src={github} />
+              <img src={github} alt="icon" />
               <span> Github </span>
             </div>
           </a>
           <a href="https://web.whatsapp.com/send?phone=5519986018775">
             <div className="box-socialMedia">
-              <img src={whatsapp} />
+              <img src={whatsapp} alt="icon" />
               <span> Whatsapp </span>
             </div>
           </a>

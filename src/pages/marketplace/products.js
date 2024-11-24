@@ -6,17 +6,17 @@ const ProductsMarketingPlace = () => {
     <>
       {/* Cabeçalho */}
       <header className="header">
-        <a href="#" className="header__logo">
+        <a href="/" className="header__logo">
           Logotipo
         </a>
         <nav className="header__nav">
-          <a href="#" className="header__nav-item">
+          <a href="/" className="header__nav-item">
             Home
           </a>
-          <a href="#" className="header__nav-item">
+          <a href="/" className="header__nav-item">
             Produtos
           </a>
-          <a href="#" className="header__nav-item">
+          <a href="/" className="header__nav-item">
             Contatos
           </a>
         </nav>

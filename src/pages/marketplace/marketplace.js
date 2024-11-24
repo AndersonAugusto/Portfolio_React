@@ -7,7 +7,7 @@ const Marketplace = () => {
     <>
       {/* Cabeçalho */}
       <header className="header">
-        <a href="#" className="header__logo">
+        <a href="/" className="header__logo">
           Logotipo
         </a>
         <nav className="header__nav">
