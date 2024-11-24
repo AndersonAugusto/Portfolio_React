@@ -237,18 +237,18 @@ function App() {
       <section id="goTop" className="container-top">
         <nav className="navbar">
           <ul>
-            <a href="#skills">
-              <li>My skills</li>
-            </a>
-            <a href="#projects">
-              <li>Projects</li>
-            </a>
-            <a href="#AboutMe">
-              <li>About Me</li>
-            </a>
-            <a href="#Contact">
-              <li>Contact</li>
-            </a>
+            <li>
+              <a href="#skills">My skills</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#AboutMe">About Me</a>
+            </li>
+            <li>
+              <a href="#Contact">Contact</a>
+            </li>
           </ul>
         </nav>
         <div className="caixa-foguete">
