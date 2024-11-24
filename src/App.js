@@ -156,11 +156,11 @@ function App() {
       <div key={index} className="box-skill">
         {skill.percent === 100 && (
           <div className="seloSkill">
-            <img src={distintivo} />
+            <img src={distintivo} alt="distintivo" />
           </div>
         )}
 
-        <img src={skill.image} />
+        <img src={skill.image} alt="icon" />
         <div className="size-Progressbar">
           <p>{skill.name}</p>
           <div
@@ -197,7 +197,7 @@ function App() {
       return
     }
 
-    let newArr = Skills.filter((skill) => skill.type == e.target.value)
+    let newArr = Skills.filter((skill) => skill.type === e.target.value)
 
     setSkills([...newArr])
     setActive(e.target.value)
