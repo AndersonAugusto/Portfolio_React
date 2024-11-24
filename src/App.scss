@@ -11,6 +11,11 @@
 .ml-4 {margin-left: 40px;}
 .ml-5 {margin-left: 50px;}
 
+.disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
 a {
     color: #fff;
     text-decoration: none;

@@ -1,18 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
-import emailjs from "@emailjs/browser";
-import { Link } from "react-router-dom";
-import "./App.scss";
+import React, { useState, useEffect, useRef } from "react"
+import emailjs from "@emailjs/browser"
+import { Link } from "react-router-dom"
+import "./App.scss"
 
 //images
-import foguete from "./assets/img/foguete.png";
-import fogo from "./assets/img/fogo.png";
-import astronauta from "./assets/img/astronauta.png";
-import alienigena from "./assets/img/alienigena.webp";
-import distintivo from "./assets/img/trofeu.png";
+import foguete from "./assets/img/foguete.png"
+import fogo from "./assets/img/fogo.png"
+import astronauta from "./assets/img/astronauta.png"
+import alienigena from "./assets/img/alienigena.webp"
+import distintivo from "./assets/img/trofeu.png"
 
-import github from "./assets/img/github.png";
-import linkedin from "./assets/img/linkedin.png";
-import whatsapp from "./assets/img/whatsapp.png";
+import github from "./assets/img/github.png"
+import linkedin from "./assets/img/linkedin.png"
+import whatsapp from "./assets/img/whatsapp.png"
 
 const Skills = [
   {
@@ -35,7 +35,7 @@ const Skills = [
   },
   {
     name: "Typescript",
-    percent: 15,
+    percent: 35,
     type: "Front-end",
     image: require("./assets/img/typescript.png"),
   },
@@ -59,7 +59,7 @@ const Skills = [
   },
   {
     name: "Figma",
-    percent: 100,
+    percent: 80,
     type: "Others",
     image: require("./assets/img/figma.png"),
   },
@@ -71,25 +71,25 @@ const Skills = [
   },
   {
     name: "React",
-    percent: 50,
+    percent: 60,
     type: "Front-end",
     image: require("./assets/img/atom.png"),
   },
   {
     name: "MongoDB",
-    percent: 10,
+    percent: 60,
     type: "Others",
     image: require("./assets/img/mongodb.png"),
   },
   {
     name: "Express",
-    percent: 40,
+    percent: 70,
     type: "Back-end",
     image: require("./assets/img/express33.png"),
   },
   {
     name: "NestJs",
-    percent: 10,
+    percent: 50,
     type: "Back-end",
     image: require("./assets/img/nest.png"),
   },
@@ -101,11 +101,11 @@ const Skills = [
   },
   {
     name: "English",
-    percent: 50,
+    percent: 40,
     type: "Others",
     image: require("./assets/img/english.png"),
   },
-];
+]
 
 const Projects = [
   {
@@ -128,39 +128,28 @@ const Projects = [
     title: "Buttons",
     link: "/buttons",
   },
-];
+]
 
 function App() {
-  const [active, setActive] = useState("All");
-  const [finishedTimeout, setFinishedTimeout] = useState(true);
-  const [skills, setSkills] = useState(Skills);
-  const [topPage, setTopPage] = useState(false);
-  const [year, setYear] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const form = useRef();
+  const [active, setActive] = useState("All")
+  const [finishedTimeout, setFinishedTimeout] = useState(true)
+  const [skills, setSkills] = useState(Skills)
+  const [year, setYear] = useState([])
+  const [loading, setLoading] = useState(false)
+  const form = useRef()
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 500) {
-        setTopPage(true);
-      } else {
-        setTopPage(false);
-      }
-    });
-  }, [topPage]);
-
-  useEffect(() => {
-    const currentDate = new Date();
-    const Year = currentDate.getUTCFullYear();
-    setYear(Year);
-  }, []);
+    const currentDate = new Date()
+    const Year = currentDate.getUTCFullYear()
+    setYear(Year)
+  }, [])
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setFinishedTimeout(false);
-    }, 8000);
-    return () => clearTimeout(timer);
-  }, []);
+      setFinishedTimeout(false)
+    }, 8000)
+    return () => clearTimeout(timer)
+  }, [])
 
   const RenderSkills = () => {
     return skills.map((skill, index) => (
@@ -184,36 +173,39 @@ function App() {
           </div>
         </div>
       </div>
-    ));
-  };
+    ))
+  }
 
   const RenderProjects = () => {
     return Projects.map((project, index) => (
-      <Link to={project.link} className="box-project">
-        <div key={index} className="box-elements-projects">
-          <img src={project.image} />
+      <Link
+        // to={project.link}
+        className="box-project disabled"
+      >
+        <div key={index} className="box-elements-projects disabled">
+          <img src={project.image} className="disabled" />
           <p>{project.title}</p>
         </div>
       </Link>
-    ));
-  };
+    ))
+  }
 
   const handleActive = (e) => {
-    if (e.target.value == "All") {
-      setSkills([...Skills]);
-      setActive(e.target.value);
-      return;
+    if (e.target.value === "All") {
+      setSkills([...Skills])
+      setActive(e.target.value)
+      return
     }
 
-    let newArr = Skills.filter((skill) => skill.type == e.target.value);
+    let newArr = Skills.filter((skill) => skill.type == e.target.value)
 
-    setSkills([...newArr]);
-    setActive(e.target.value);
-  };
+    setSkills([...newArr])
+    setActive(e.target.value)
+  }
 
   const sendEmail = (e) => {
-    e.preventDefault();
-    setLoading(true);
+    e.preventDefault()
+    setLoading(true)
 
     emailjs
       .sendForm(
@@ -224,14 +216,14 @@ function App() {
       )
       .then(
         (result) => {
-          setLoading(false);
-          console.log(result.text);
+          setLoading(false)
+          console.log(result.text)
         },
         (error) => {
-          console.log(error.text);
+          console.log(error.text)
         }
-      );
-  };
+      )
+  }
 
   return (
     <main>
@@ -241,11 +233,6 @@ function App() {
             <span></span>
           </div>
         </>
-      )}
-      {topPage && (
-        <a href="#goTop">
-          <button className="topPage">^</button>
-        </a>
       )}
       <section id="goTop" className="container-top">
         <nav className="navbar">
@@ -290,14 +277,14 @@ function App() {
                 type="button"
                 onMouseOver={handleActive}
                 value="All"
-                className={active == "All" ? "buttonActive" : "buttonInative"}
+                className={active === "All" ? "buttonActive" : "buttonInative"}
               />
               <input
                 type="button"
                 onMouseOver={handleActive}
                 value="Front-end"
                 className={
-                  active == "Front-end" ? "buttonActive" : "buttonInative"
+                  active === "Front-end" ? "buttonActive" : "buttonInative"
                 }
               />
               <input
@@ -305,7 +292,7 @@ function App() {
                 onMouseOver={handleActive}
                 value="Back-end"
                 className={
-                  active == "Back-end" ? "buttonActive" : "buttonInative"
+                  active === "Back-end" ? "buttonActive" : "buttonInative"
                 }
               />
               <input
@@ -313,7 +300,7 @@ function App() {
                 onMouseOver={handleActive}
                 value="Others"
                 className={
-                  active == "Others" ? "buttonActive" : "buttonInative"
+                  active === "Others" ? "buttonActive" : "buttonInative"
                 }
               />
             </div>
@@ -325,7 +312,7 @@ function App() {
         </div>
       </section>
       <div className="title">
-        <h3 id="projects">Projects</h3>
+        <h3 id="projects">Projects (Building...)</h3>
       </div>
       <section className="container projects-box ">
         <div className="project-box">
@@ -344,7 +331,7 @@ function App() {
               " lastName " :<span className="value"> " Ferrari " </span>
             </p>
             <p className="ml-1">
-              " age " : <span className="number">26</span>
+              " age " : <span className="number">28</span>
             </p>
             <p className="ml-1">
               " state " :<span className="value"> " São Paulo " </span>
@@ -356,18 +343,16 @@ function App() {
             <p className="ml-1">
               " info " :
               <span className="value">
-                " I'm Anderson, a Fullstack Developer. "
+                " I'm Anderson, a Full Stack Developer. "
               </span>
             </p>
             <div className="ml-2">contact : &#123; </div>
             <p className="ml-4">
               " email " :
-              <span className="value">
-                " anderson.augusto2023@hotmail.com "
-              </span>
+              <span className="value">" andersonfatec2018@gmail.com "</span>
             </p>
             <p className="ml-4">
-              " phone " : <span className="value"> " 19991980059 " </span>
+              " phone " : <span className="value"> " +55 19 986018775 " </span>
             </p>
 
             <div className="ml-2">&#125;</div>
@@ -388,15 +373,15 @@ function App() {
           <div className="description">
             <div className="aboutMe-photo">
               <h3>About me</h3>
+              <p>I'm Anderson, a Full Stack Developer</p>
               <p>
-                I'm Anderson, a Fulstack Developer with 2 years of solid
-                experiences. Expert in Javascript.
+                I have developed a wide range of projects for different market
+                niches while working at a company specialized in creating
+                digital solutions
               </p>
               <p>
-                I have developed many types of front-ends like, Ecommerce,
-                landing-pages and more...My main focus these days is building
-                accessible, inclusive products and digital experiences at
-                Upstatement for a variety of clients.
+                These projects were built using technologies like NestJS,
+                MongoDB, and NextJS, ensuring robust and scalable solutions
               </p>
               <p>
                 When I am not coding, I am playing games , watching series or
@@ -414,12 +399,13 @@ function App() {
       </div>
       <section className="container box-contact-me">
         <form ref={form} onSubmit={sendEmail}>
-          <input placeholder="Name" name="Nome" />
+          <input placeholder="Name" name="Nome" autoComplete="off" />
           <input
             placeholder="Titulo"
             name="Título"
             id="title"
             className="amongInput"
+            autoComplete="off"
           />
           <textarea
             placeholder="Type your message..."
@@ -433,7 +419,7 @@ function App() {
         <div className="socialMedia">
           <a
             target="_blank"
-            href="https://www.linkedin.com/in/anderson-augusto-ferrari-231577100/"
+            href="https://www.linkedin.com/in/andersonferrari96/"
           >
             <div className="box-socialMedia">
               <img src={linkedin} />
@@ -446,7 +432,7 @@ function App() {
               <span> Github </span>
             </div>
           </a>
-          <a href="https://web.whatsapp.com/send?phone=5519991980059">
+          <a href="https://web.whatsapp.com/send?phone=5519986018775">
             <div className="box-socialMedia">
               <img src={whatsapp} />
               <span> Whatsapp </span>
@@ -458,7 +444,7 @@ function App() {
         <p> {year} - Todos os direitos reservados </p>
       </section>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App
