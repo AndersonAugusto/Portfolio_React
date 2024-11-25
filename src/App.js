@@ -156,7 +156,7 @@ function App() {
       <div key={index} className="box-skill">
         {skill.percent === 100 && (
           <div className="seloSkill">
-            <img src={distintivo} alt="distintivo" />
+            <img src={distintivo} alt="trofeu" />
           </div>
         )}
 
