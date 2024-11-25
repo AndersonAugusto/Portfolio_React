@@ -2,13 +2,14 @@ import React, { useState, useEffect, useRef } from "react"
 import emailjs from "@emailjs/browser"
 import { Link } from "react-router-dom"
 import "./App.scss"
+import Navbar from "./layouts/navbar/navbar"
 
 //images
-import foguete from "./assets/img/foguete.png"
-import fogo from "./assets/img/fogo.png"
-import astronauta from "./assets/img/astronauta.png"
-import alienigena from "./assets/img/alienigena.webp"
-import distintivo from "./assets/img/trofeu.png"
+import foguete from "./assets/img/rocket.png"
+import fogo from "./assets/img/fire.png"
+import astronauta from "./assets/img/astronaut.png"
+import alienigena from "./assets/img/alien.webp"
+import distintivo from "./assets/img/trophy.png"
 
 import github from "./assets/img/github.png"
 import linkedin from "./assets/img/linkedin.png"
@@ -235,10 +236,11 @@ function App() {
         </>
       )}
       <section id="goTop" className="container-top">
-        <nav className="navbar">
+        <Navbar />
+        {/* <nav className="navbar">
           <ul>
             <li>
-              <a href="#skills">My skills</a>
+              <a href="#skills">Skills</a>
             </li>
             <li>
               <a href="#projects">Projects</a>
@@ -250,7 +252,7 @@ function App() {
               <a href="#Contact">Contact</a>
             </li>
           </ul>
-        </nav>
+        </nav> */}
         <div className="caixa-foguete">
           <div className="foguete">
             <img className="carcaca" src={foguete} alt="foguete" />

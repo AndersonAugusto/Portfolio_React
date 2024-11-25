@@ -1,0 +1,67 @@
+/* Estilos gerais */
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    position: relative;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      background-color: #350b6bf5;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+  
+    .nav-links.active {
+      transform: translateX(0);
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+  
