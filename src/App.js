@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import emailjs from "@emailjs/browser"
 import { Link } from "react-router-dom"
 import "./App.scss"
@@ -181,6 +181,7 @@ function App() {
     return Projects.map((project, index) => (
       <Link
         // to={project.link}
+        key={index}
         className="box-project disabled"
       >
         <div key={index} className="box-elements-projects disabled">
@@ -235,24 +236,8 @@ function App() {
           </div>
         </>
       )}
-      <section id="goTop" className="container-top">
+      <section className="container-top">
         <Navbar />
-        {/* <nav className="navbar">
-          <ul>
-            <li>
-              <a href="#skills">Skills</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#AboutMe">About Me</a>
-            </li>
-            <li>
-              <a href="#Contact">Contact</a>
-            </li>
-          </ul>
-        </nav> */}
         <div className="caixa-foguete">
           <div className="foguete">
             <img className="carcaca" src={foguete} alt="foguete" />
@@ -327,46 +312,56 @@ function App() {
           <div className="jsonMe">
             <div>&#123;</div>
             <p className="ml-1">
-              " firstName " :<span className="value"> " Anderson " </span>
+              &quot;firstName&quot; :
+              <span className="value"> &quot; Anderson &quot; </span>
             </p>
             <p className="ml-1">
-              " lastName " :<span className="value"> " Ferrari " </span>
+              &quot; lastName &quot; :
+              <span className="value"> &quot; Ferrari &quot; </span>
             </p>
             <p className="ml-1">
-              " age " : <span className="number">28</span>
+              &quot; age &quot; : <span className="number">28</span>
             </p>
             <p className="ml-1">
-              " state " :<span className="value"> " São Paulo " </span>
+              &quot; state &quot; :
+              <span className="value"> &quot; São Paulo &quot; </span>
             </p>
             <p className="ml-1">
-              " currentCity " : <span className="value"> " Campinas " </span>
+              &quot; currentCity &quot; :{" "}
+              <span className="value"> &quot; Campinas &quot; </span>
             </p>
 
             <p className="ml-1">
-              " info " :
+              &quot; info &quot;:
               <span className="value">
-                " I'm Anderson, a Full Stack Developer. "
+                &quot; I am Anderson, a Full Stack Developer. &quot;
               </span>
             </p>
             <div className="ml-2">contact : &#123; </div>
             <p className="ml-4">
-              " email " :
-              <span className="value">" andersonfatec2018@gmail.com "</span>
+              &quot; email &quot; :
+              <span className="value">
+                &quot; andersonfatec2018@gmail.com &quot;
+              </span>
             </p>
             <p className="ml-4">
-              " phone " : <span className="value"> " +55 19 986018775 " </span>
+              &quot; phone &quot; :{" "}
+              <span className="value"> &quot; +55 19 986018775 &quot; </span>
             </p>
 
             <div className="ml-2">&#125;</div>
             <div className="ml-2">createdAt : &#123; </div>
             <p className="ml-4">
-              " month " :<span className="value">" December "</span>
+              &quot; month &quot; :
+              <span className="value">&quot; December &quot;</span>
             </p>
             <p className="ml-4">
-              " Day " : <span className="value"> " 17 " </span>
+              &quot; Day &quot; :{" "}
+              <span className="value"> &quot; 17 &quot; </span>
             </p>
             <p className="ml-4">
-              " Year " : <span className="value"> " 2022 " </span>
+              &quot; Year &quot; :{" "}
+              <span className="value"> &quot; 2022 &quot; </span>
             </p>
 
             <div className="ml-2">&#125;</div>
@@ -375,7 +370,7 @@ function App() {
           <div className="description">
             <div className="aboutMe-photo">
               <h3>About me</h3>
-              <p>I'm Anderson, a Full Stack Developer</p>
+              <p>I am Anderson, a Full Stack Developer</p>
               <p>
                 I have developed a wide range of projects for different market
                 niches while working at a company specialized in creating

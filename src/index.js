@@ -11,8 +11,6 @@ import ProductsMarketingPlace from "./pages/marketplace/products"
 
 import reportWebVitals from "./reportWebVitals"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-// import Root, { rootLoader } from "./routes/root";
-// import Team, { teamLoader } from "./routes/team";
 
 const router = createBrowserRouter([
   {

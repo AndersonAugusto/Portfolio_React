@@ -65,7 +65,109 @@ main {
         letter-spacing: 2px;
     }
 }
+// .container-top {
+//     .navbar {
+//         position: absolute;
+//         color: #fff;
+//         width: 100%; /* Melhor fallback */
+//         background-color: rgba(68, 68, 68, 0.26);
+        
+//         a {
+//             color: #fff;
+//             text-decoration: none;
+//         }
+//         ul {
+//             display: flex;
+//             justify-content: flex-end; /* Alinhamento correto */
+//             list-style: none;
+//             align-items: center;
+//         }
+//         li {
+//             margin-right: 3rem;
+//             color: #00e7ff;
+//             border: 1px solid rgba(46, 138, 136, 0.2);
+//             padding: 0.625rem 1.25rem;
+//             background-color: rgba(0, 0, 0, 0.28);
+//             border-radius: 0.125rem;
+//             transition: all 0.2s ease-in-out;
+//             width: 4.6875rem; /* Ajustado */
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             &:hover, &:focus {
+//                 cursor: pointer;
+//                 box-shadow: 0px 2px 4px -5px #ffffff;
+//                 transform: translateY(-2px);
+//                 background-color: #000;
+//             }
+//         }
+//     }
 
+//     .box-astronauta {
+//         position: relative;
+//         .text-astronauta {
+//             position: absolute;
+//             right: 12.5rem;
+//             top: 14.375rem;
+//             color: #000;
+//             border-radius: 2px;
+//             font-weight: bolder;
+//             border: 1px solid;
+//             padding: 10px;
+//             background-color: #fff;
+//             animation: animaOpacityText 2s alternate ease-in-out;
+//             &::after {
+//                 content: '';
+//                 position: absolute;
+//                 right: -5px;
+//                 bottom: -1px;
+//                 width: 25px;
+//                 height: 12px;
+//                 background-color: white;
+//                 border-bottom-left-radius: 23px;
+//                 transform: rotate(187deg);
+//             }
+//         }
+//         .astronauta {
+//             z-index: 999;
+//             width: 12.5rem;
+//             position: absolute;
+//             right: 0;
+//             top: 15.625rem;
+//             animation: animaRightToLeft 2s alternate ease-in-out;
+//         }
+//     }
+    
+//     .caixa-foguete {
+//         position: absolute;
+//         left: 50%;
+//         top: 80%;
+//         transform: translate(-50%, -50%);
+//         .foguete {
+//             width: 6.25rem;
+//             height: 10.3125rem;
+//             position: relative;
+//             border: 1px solid transparent;
+//             z-index: 99;
+//             animation: animaFoguete 8s alternate ease-in-out;
+//             .carcaca {
+//                 width: 100%;
+//                 object-fit: cover;
+//                 position: absolute;
+//                 top: 0;
+//                 z-index: 99;
+//             }
+//             .fogo {
+//                 width: 100%;
+//                 transform: rotate(180deg);
+//                 margin-bottom: 3.125rem;
+//                 position: absolute;
+//                 bottom: -9.0625rem;
+//                 animation: animaOpacity 8s alternate ease-in-out;
+//             }
+//         }
+//     }
+// }
 .container-top {
     background-image: url('./assets/img/modelo-5.jpg');
     background-position: bottom center;
@@ -86,7 +188,7 @@ main {
         }
         ul {
             display: flex;
-            justify-content: right;
+            justify-content: center;
             list-style: none;
             text-align: center;
             align-items: center;
@@ -157,7 +259,7 @@ main {
             width: 100px;
             height: 165px;
             position: relative;
-            border: 1px solid rgba(255, 0, 0, 0);
+            border: 1px solid transparent;
             z-index: 99;
             animation: animaFoguete 8s alternate ease-in-out;
             .carcaca {
@@ -657,7 +759,7 @@ main {
         .navbar{
             ul{
                 justify-content: space-around;
-                padding: 0;
+                padding: 0 0px 25px 0;
             }
             li {
                 margin-right: 0px;

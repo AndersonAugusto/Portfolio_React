@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import "./tictactoe.scss";
+import { useState } from "react"
+import "./tictactoe.scss"
 
-const initialBoard = ["", "", "", "", "", "", "", "", ""];
+const initialBoard = ["", "", "", "", "", "", "", "", ""]
 
 const TicTacToe = () => {
-  const [board, setBoard] = useState(initialBoard);
-  const [isXNext, setIsXNext] = useState(true);
-  const [winner, setWinner] = useState(null);
+  const [board, setBoard] = useState(initialBoard)
+  const [isXNext, setIsXNext] = useState(true)
+  const [winner, setWinner] = useState(null)
 
   const handleClick = (index) => {
     if (winner || board[index]) {
-      return;
+      return
     }
 
-    const newBoard = [...board];
-    newBoard[index] = isXNext ? "X" : "O";
-    setBoard(newBoard);
-    setIsXNext(!isXNext);
+    const newBoard = [...board]
+    newBoard[index] = isXNext ? "X" : "O"
+    setBoard(newBoard)
+    setIsXNext(!isXNext)
 
     const winningCombinations = [
       [0, 1, 2],
@@ -27,7 +27,7 @@ const TicTacToe = () => {
       [2, 5, 8],
       [0, 4, 8],
       [2, 4, 6],
-    ];
+    ]
 
     for (const combination of winningCombinations) {
       if (
@@ -35,46 +35,46 @@ const TicTacToe = () => {
         newBoard[combination[0]] === newBoard[combination[1]] &&
         newBoard[combination[1]] === newBoard[combination[2]]
       ) {
-        setWinner(newBoard[combination[0]]);
-        return;
+        setWinner(newBoard[combination[0]])
+        return
       }
     }
-  };
+  }
 
   const renderSquare = (index) => {
     return (
       <button className="square" onClick={() => handleClick(index)}>
         {board[index]}
       </button>
-    );
-  };
+    )
+  }
 
   const renderResetButton = () => {
     return (
       <button
         className="reset-button"
         onClick={() => {
-          setBoard(initialBoard);
-          setIsXNext(true);
-          setWinner(null);
+          setBoard(initialBoard)
+          setIsXNext(true)
+          setWinner(null)
         }}
       >
         Reset
       </button>
-    );
-  };
+    )
+  }
 
   const renderStatus = () => {
     if (winner) {
-      renderResetButton();
-      return `Vencedor: ${winner}`;
+      renderResetButton()
+      return `Vencedor: ${winner}`
     } else if (!winner && !board.includes("")) {
-      renderResetButton();
-      return "Empate";
+      renderResetButton()
+      return "Empate"
     } else {
-      return `Próximo jogador: ${isXNext ? "X" : "O"}`;
+      return `Próximo jogador: ${isXNext ? "X" : "O"}`
     }
-  };
+  }
 
   return (
     <div className="tic-tac-toe">
@@ -93,7 +93,7 @@ const TicTacToe = () => {
         {renderSquare(8)}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TicTacToe;
+export default TicTacToe

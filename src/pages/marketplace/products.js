@@ -1,4 +1,3 @@
-import React from "react"
 import "./marketplace.scss"
 
 const ProductsMarketingPlace = () => {
@@ -35,32 +34,38 @@ const ProductsMarketingPlace = () => {
       {/* Carrossel */}
       <body>
         <div id="fundoPreto">
-          <div id="modal" class="relative modal">
-            <div id="checkout" class="checkout"></div>
-            <div class="closeCheckout">
-              <div class="menuModal" id="valorTotal"></div>
-              <div class="menuModal" onclick="clearCarrinho()">
+          <div id="modal" className="relative modal">
+            <div id="checkout" className="checkout"></div>
+            <div className="closeCheckout">
+              <div className="menuModal" id="valorTotal"></div>
+              <div
+                className="menuModal"
+                // onclick="clearCarrinho()"
+              >
                 Limpar Carrinho
               </div>
-              <div class="menuModal" onclick="closeModal()">
+              <div
+                className="menuModal"
+                // onclick="closeModal()"
+              >
                 {" "}
                 Fechar
               </div>
             </div>
           </div>
         </div>
-        <section class="products">
+        <section className="products">
           <section id="menu">
-            <div class="inputField">
+            <div className="inputField">
               <input id="filtro" type="text" placeholder="Filtro" />
             </div>
-            <div class="">
+            <div className="">
               <button>Buscar</button>
             </div>
             <div id="carrinho">
               <img
                 src="../../imagens/carrinho.png"
-                onclick="showCheckout()"
+                // onclick="showCheckout()"
                 alt=""
               />
               <span id="carrinhoCount"> </span>
