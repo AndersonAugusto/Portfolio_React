@@ -247,7 +247,7 @@ function App() {
         <div className="box-astronauta">
           {!finishedTimeout && (
             <>
-              <p className="text-astronauta">Wellcome to my portfolio!</p>
+              <p className="text-astronauta"> Welcome to my portfolio! </p>
               <img className="astronauta" src={astronauta} alt="icon" />
             </>
           )}
